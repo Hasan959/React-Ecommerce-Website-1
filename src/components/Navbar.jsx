@@ -23,7 +23,7 @@ const Navbar = () => {
 
   ]
   return (
-    <header className='max-w-screen-2xl xl:px-28 px-4 mx-auto '>
+    <header className='max-w-screen-3xl xl:px-28 px-4 absolute top-0 right-0 left-0'>
       <nav className='flex justify-between items-center container md:py-4 pt-6 pb-3  '>
         <FaSearch className='text-blue-500 w-5 h-5 cursor-pointer hidden md:block' />
         
@@ -35,8 +35,10 @@ const Navbar = () => {
            <a href="/" className='flex items-center gap-2'> <FaUser /> Account </a>
            <a href="/" className='flex items-center gap-2'> <FaShoppingBag /> Shooping </a>
          </div>
+           
 
-         <div>
+         {/* navbar for sm device   */}
+         <div className='sm:hidden'>
           <button onClick={toogleMenu}> 
             {
               isMenuOpen ? <FaTimes className='w-5 h-5 text-black'/>:<FaBars className='w-5 h-5 text-black'/> 
@@ -66,12 +68,12 @@ const Navbar = () => {
       </div>
 
       {/* only mobile menu items */}
-      <div>
+      <div >
         <ul className={`bg-black text-white px-4 py-2 rounded ${isMenuOpen ? "" :  "hidden"}`}>
           {
             navItems.map(({title, path})=> (
               
-              <li key={title} className='hover:text-orange-500' >
+              <li key={title} className='hover:text-orange-500 my-3 cursor-pointer ' >
                 <Link to="/">{title}</Link>
 
               </li>
