@@ -3,7 +3,7 @@ import React from 'react'
 const Catagory = () => {
 
     const companyLogo = [
-        {id:1,img}
+        
     ]
 
   return (
