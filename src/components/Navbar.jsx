@@ -28,13 +28,15 @@ const Navbar = () => {
         <FaSearch className='text-blue-500 w-5 h-5 cursor-pointer hidden md:block' />
         
         {/* logo */}
-        <a href="/"> <img src={logo} alt="" /> </a>
+        <a href="/"> <img src={logo} alt=""  /> </a>
 
         {/* account and shopping btn */}
          <div className='text-lg text-red-600 sm:flex items-center gap-4 hidden'>
            <a href="/" className='flex items-center gap-2'> <FaUser /> Account </a>
            <a href="/" className='flex items-center gap-2'> <FaShoppingBag /> Shooping </a>
          </div>
+         
+         
            
 
          {/* navbar for sm device   */}
@@ -68,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {/* only mobile menu items */}
-      <div >
+      <div>
         <ul className={`bg-black text-white px-4 py-2 rounded ${isMenuOpen ? "" :  "hidden"}`}>
           {
             navItems.map(({title, path})=> (

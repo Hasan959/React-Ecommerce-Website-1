@@ -26,22 +26,22 @@ const Catagory = () => {
         </div>
          
          {/* catagory grid */}
-         <div className='mt-8'>
+         <div className='mt-8 flex flex-col md:flex-row items-center gap-4'>
 
           <div className='font-semibold uppercase md:rotate-90 text-center bg-black text-white md:p-1.5 p-2 rounded-sm inline-flex'>
           <p>Explore new and popular styles</p>
          </div>
          <div>
-          <Link to="/"> <img src="/image/image-1.png" alt="" /> </Link>
+          <Link to="/"> <img src="/image/image-1.png" alt="" className='w-full hover:scale-105 transition-all duration-200' /> </Link>
          </div>
 
          <div className='md:w-1/2'>
           <div className='grid grid-cols-2 gap-2 '>
             
-            <Link to="/"><img src="/image/image-2.png" alt="" /> </Link>
-            <Link to="/"><img src="/image/image-3.png" alt="" /></Link>
-            <Link to="/"><img src="/image/image-4.png" alt="" /></Link>
-            <Link to="/"><img src="/image/image-5.png" alt="" /></Link>
+            <Link to="/"><img src="/image/image-2.png" alt="" className='w-full hover:scale-105 transition-all duration-200' /> </Link>
+            <Link to="/"><img src="/image/image-3.png" alt=""  className='w-full hover:scale-105 transition-all duration-200'  /></Link>
+            <Link to="/"><img src="/image/image-4.png" alt=""  className='w-full hover:scale-105 transition-all duration-200' /></Link>
+            <Link to="/"><img src="/image/image-5.png" alt=""  className='w-full hover:scale-105 transition-all duration-200' /></Link>
 
           </div>
          </div>
