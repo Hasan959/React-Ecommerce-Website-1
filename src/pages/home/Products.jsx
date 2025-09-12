@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaFilter } from 'react-icons/fa'
-import { data } from 'react-router';
+import Cards from '../../components/Cards';
+
 
 const Products = () => {
   const [products,setProducts] = useState([]);
@@ -54,6 +55,8 @@ const Products = () => {
             
         </div>
       </div>
+
+      <Cards filteredItem= {products} />
       </div>
 
     </div>
