@@ -5,7 +5,9 @@ import Cards from '../../components/Cards';
 
 const Products = () => {
   const [products,setProducts] = useState([]);
-
+  const [filteredItems,setFilteredItems] = useState([]);
+  const [selectCatagory,setSelectedCatagory] = useState("")
+  const [sortOption,setSortOption] = useState("default")
   useEffect(() =>{
 
     const fetchData = async ()=> {
@@ -14,6 +16,7 @@ const Products = () => {
         const data = await response.json();
         //console.log(data)
         setProducts(data)
+        setFilteredItems(data)
 
       } catch(error){
         console.log("Error fetching data:",error)
@@ -23,7 +26,7 @@ const Products = () => {
     fetchData();
 
   },[])
-  console.log(products)
+  //console.log(products)
 
   return (
     <div className='max-w-screen-3xl container mx-auto xl:px-28 px-4 mb-12'>
@@ -56,7 +59,7 @@ const Products = () => {
         </div>
       </div>
 
-      <Cards filteredItem= {products} />
+      <Cards filteredItems= {filteredItems} />
       </div>
 
     </div>
