@@ -6,7 +6,7 @@ import Cards from '../../components/Cards';
 const Products = () => {
   const [products,setProducts] = useState([]);
   const [filteredItems,setFilteredItems] = useState([]);
-  const [selectCatagory,setSelectedCatagory] = useState("")
+  const [selectedCatagory,setSelectedCatagory] = useState("")
   const [sortOption,setSortOption] = useState("default")
   useEffect(() =>{
 
@@ -28,6 +28,38 @@ const Products = () => {
   },[])
   //console.log(products)
 
+  //filtering function
+  const filterItems = (category) => {
+    const filtered = category === "all" ? (products) : products.filter((item) => item.category === category)
+    setFilteredItems(filtered);
+    setSelectedCatagory(category);
+
+  }
+
+  //show all products
+  const showAll = ()=> {
+    setFilteredItems(products);
+    selectedCatagory("all");
+  }
+
+  //show all products
+  const handleSortChange = (option) => {
+    setSortOption(option);
+
+     //logic for sorting
+  let sortedItems = [...filterItems];
+
+  switch (option) {
+    case " A-Z" :
+           sortedItems.sort((a,b) => a.title.localCompare(b.title));
+           break;
+  }
+  
+
+  }
+
+ 
+
   return (
     <div className='max-w-screen-3xl container mx-auto xl:px-28 px-4 mb-12'>
       <h2 className='text-3xl font-semibold text-center my-8'> Or subscribe to the newsletter </h2>
@@ -37,18 +69,18 @@ const Products = () => {
         <div className='flex flex-col md:flex-row flex-wrap md:justify-between items-center space-y-3'> 
         {/* all btn */}
         <div className='flex flex-row justify-start md:items-center md:gap-8 '>
-            <button>All products</button>
-            <button>T-shirts</button>
-            <button>Hoodies</button>
-            <button>Bag</button>
+            <button onClick={showAll}> All products </button>
+            <button onClick={() => filterItems("Dress")}> clothing </button>
+            <button onClick={() => filterItems("Hoodies")}>Hoodies</button>
+            <button onClick={() => filterItems("Bag")}>Bag</button>
         </div>
 
         {/* sorting options */}
-        <div>
-            <div className='bg-black p-2'>
+        <div className='flex justify-end mb-4 rounded-sm'>
+            <div className='bg-black p-2 '>
                 <FaFilter className='text-white h-4 w-4'/>
             </div>
-            <select className='bg-black text-white px-2 py-1 rounded-sm'>
+            <select className='bg-black text-white px-2 py-1 '>
                 <option value="default"> Default </option>
                 <option value="A-z">A-z</option>
                 <option value="Z-A">Z-A</option>
