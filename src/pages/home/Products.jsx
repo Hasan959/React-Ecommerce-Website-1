@@ -50,7 +50,7 @@ const Products = () => {
   let sortedItems = [...filteredItems];
 
   switch (option) {
-    case " A-Z" :
+    case "A-Z" :
            sortedItems.sort((a,b) => a.title.localeCompare(b.title));
            break;
 
@@ -68,6 +68,8 @@ const Products = () => {
             default:
               break;
   }
+
+         setFilteredItems(sortedItems);
   
 
   }
@@ -96,13 +98,14 @@ const Products = () => {
             </div>
             <select 
                 id='sort'
-                onChange={(e) => handleSortChange(e.target.value) }
+                onChange={(e) => handleSortChange(e.target.value)}
+                value={sortOption}
                 className='bg-black text-white px-2 py-1 '>
                 <option value="default"> Default </option>
-                <option value="A-z">A-z</option>
+                <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
-                <option value="low-high">Low to High </option>
-                <option value="High to low">High to Low</option>
+                <option value="low-to-high">Low to High </option>
+                <option value="high-to-low">High to Low</option>
             </select>
             
         </div>
