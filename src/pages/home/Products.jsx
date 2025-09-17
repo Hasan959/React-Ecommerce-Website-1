@@ -6,7 +6,7 @@ import Cards from '../../components/Cards';
 const Products = () => {
   const [products,setProducts] = useState([]);
   const [filteredItems,setFilteredItems] = useState([]);
-  const [selectedCatagory,setSelectedCatagory] = useState("")
+  const [selectedCatagory,setSelectedCatagory] = useState("all")
   const [sortOption,setSortOption] = useState("default")
   useEffect(() =>{
 
