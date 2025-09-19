@@ -6,6 +6,8 @@ import Collections from './Collections'
 import BestSellers from './BestSellers'
 
 
+
+
 const Home = () => {
   return (
     <div>
@@ -14,6 +16,8 @@ const Home = () => {
       <Products/>
       <Collections/>
       <BestSellers/>
+      
+      
       
 
     </div>
