@@ -8,8 +8,9 @@ const Products = () => {
   const [filteredItems,setFilteredItems] = useState([]);
   const [selectedCatagory,setSelectedCatagory] = useState("all")
   const [sortOption,setSortOption] = useState("default")
-  useEffect(() =>{
 
+
+  useEffect(() =>{
     const fetchData = async ()=> {
       try{
         const response = await fetch("/products.json");
