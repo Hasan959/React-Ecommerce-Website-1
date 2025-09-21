@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import Products from './Products';
+
 
 const SingleProduct = () => {
   const {id} = useParams();
+  const [products,setProducts] =useState([])
   //console.log(id)
   useEffect(() =>{
       const fetchData = async ()=> {
@@ -11,10 +12,8 @@ const SingleProduct = () => {
           const response = await fetch("/products.json");
           const data = await response.json();
           const product = data.filter((p) => p.id == id);
-          console.log(product)
+          //console.log(product)
           setProducts(product[0])
-          
-  
         } catch(error){
           console.log("Error fetching data:",error)
         }
@@ -24,12 +23,23 @@ const SingleProduct = () => {
   
     },[id])
 
-    const {title, category, price, image, status} = Products;
+    const {title,category, price, image, status} = products;
 
   return (
     <div className='mt-28 max-w-screen-2xl container mx-auto xl:px-28 px-4'> 
-    <div className='p-3 max'>
-      <div>
+    <div className='p-3 max-w-7xl m-auto'>
+      <div className='mt-6 sm:mt-10'>
+        <div className='grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6 h-max'>
+          <div>
+            <img src={image} alt="" className='w-full' />
+          </div>
+
+          {/* product details */}
+          <div>
+            <h1 className='title '> {title} </h1>
+            <p className='mt-3 text-gray-600 text-base leading-6 text-justify sm:text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis velit, ipsa corporis explicabo dolorem atque necessitatibus maxime totam non cumque aperiam incidunt iure labore, aliquid asperiores exercitationem quos, similique earum laborum repellat. Voluptates natus et exercitationem perspiciatis. Quis, quisquam sapiente.</p>
+          </div>
+        </div>
 
       </div>
     </div>
