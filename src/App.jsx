@@ -1,5 +1,5 @@
 
-import './App.css'
+
 import { createBrowserRouter,RouterProvider } from 'react-router'
 
 import Home from './pages/home/Home';
