@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-
+//props receved from Products.jsx
 const Cards = ({filteredItems}) => {
   return (
     <div className='grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 items-center justify-center gap-12 shadow-sm'>
