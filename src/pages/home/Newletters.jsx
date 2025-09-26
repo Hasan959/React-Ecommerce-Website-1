@@ -7,6 +7,7 @@ const Newletters = () => {
         <h2> Follow product and discounts on Instagram </h2>
 
         {/* insta grid */}
+        {/* link added */}
         <div className='flex flex-wrap gap-4 items-center justify-center mb-20'>
            <Link to="/">
            <img src="/image/instagram/image-1.png" alt="" />

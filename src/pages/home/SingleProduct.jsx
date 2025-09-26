@@ -10,7 +10,7 @@ const SingleProduct = () => {
   useEffect(() =>{
       const fetchData = async ()=> {
         try{
-          const response = await fetch("/products.json");
+          const response = await fetch("/products.json"); 
           const data = await response.json();
           const product = data.filter((p) => p.id == id);
           //console.log(product)
