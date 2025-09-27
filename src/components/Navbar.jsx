@@ -39,8 +39,8 @@ const Navbar = () => {
          
            
 
-         {/* navbar for sm device   */}
-         <div className='sm:hidden'>
+         {/* navbar toggleMenu function for sm & mobile device   */}
+         <div className='lg:hidden'>
           <button onClick={toogleMenu}> 
             {
               isMenuOpen ? <FaTimes className='w-5 h-5 text-black'/>:<FaBars className='w-5 h-5 text-black'/> 
@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {/* only mobile menu items */}
       <div>
-        <ul className={`bg-black text-white px-4 py-2 rounded ${isMenuOpen ? "" :  "hidden"}`}>
+        <ul className={`bg-black text-white px-4 py-2 rounded ${isMenuOpen ? " " :  "hidden"}`}>
           {
             navItems.map(({title, path})=> (
               
